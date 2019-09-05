@@ -1,0 +1,6 @@
+export("gsub_eval")
+export("gsub_eval_opt")
+
+
+importFrom("GlobalOptions", set_opt)
+importFrom("GetoptLong", qq)

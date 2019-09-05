@@ -1,0 +1,12 @@
+Package: gsubeval
+Type: Package
+Title: Substitute with an Evaluated Expression
+Version: 0.0.1
+Date: 2019-09-05
+Author: Zuguang Gu
+Maintainer: Zuguang Gu <z.gu@dkfz.de>
+Depends: R (>= 3.0.0)
+Imports: GlobalOptions (>= 0.1.0), GetoptLong
+Description: Substitute with an evaluated expression.
+URL: https://github.com/jokergoo/gsubeval
+License: MIT + file LICENSE
