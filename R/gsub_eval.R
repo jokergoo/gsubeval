@@ -16,6 +16,8 @@
 # map = c("a" = "one", "b" = "two", "c" = "three")
 # txt = "a, b, c";
 # gsub_eval("([a|b|c])", "@{map['\\1']}", txt)
+#
+# gsub_eval("(\\d+),(\\d+)", "\\1 + \\2 = @{\\1 + \\2}", c("1,2", "3,4"))
 gsub_eval = function(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
     fixed = FALSE, useBytes = FALSE, envir = parent.frame()) {
     txt = gsub(
@@ -27,7 +29,8 @@ gsub_eval = function(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
         fixed = fixed, 
         useBytes = useBytes
     )
-    unname(sapply(txt, function(x) gsub_eval_opt$engine(x, envir = envir)))
+    fun = gsub_eval_opt$engine
+    unname(sapply(txt, function(x) fun(x, envir = envir)))
 }
 
 # == title
