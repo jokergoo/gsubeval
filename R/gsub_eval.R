@@ -27,7 +27,7 @@ gsub_eval = function(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
         fixed = fixed, 
         useBytes = useBytes
     )
-    unname(sapply(txt, function(x) GetoptLong::qq(x, envir = envir)))
+    unname(sapply(txt, function(x) gsub_eval_opt$engine(x, envir = envir)))
 }
 
 # == title
